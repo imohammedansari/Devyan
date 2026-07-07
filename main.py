@@ -2,6 +2,12 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import os
+
+# added by monocle claude skill
+os.environ.setdefault("MONOCLE_EXPORTER", "file")
+from monocle_apptrace import setup_monocle_telemetry
+setup_monocle_telemetry(workflow_name="devyan")
+
 from crewai import Agent, Task, Crew, Process
 from langchain_openai import ChatOpenAI
 from decouple import config
